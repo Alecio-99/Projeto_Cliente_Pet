@@ -1,4 +1,4 @@
-package com.petShot.clitente.infra.secutiry;
+package com.petShot.clitente.infra.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
