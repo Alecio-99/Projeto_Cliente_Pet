@@ -1,6 +1,6 @@
 package com.petShot.clitente.infra.security;
 
-import com.petShot.clitente.repository.ClienteRepository;
+import com.petShot.clitente.repository.ClienteSubscriptionRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,7 +21,7 @@ public class SecurityFilter extends OncePerRequestFilter {
     private TokenService tokenService;
 
     @Autowired
-    private ClienteRepository clienteRepository;
+    private ClienteSubscriptionRepository clienteRepository;
 
 
     @Override
