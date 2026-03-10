@@ -1,4 +1,4 @@
-package com.petShot.clitente;
+package com.principal.clitente;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

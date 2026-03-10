@@ -1,7 +1,7 @@
-package com.petShot.clitente.entity;
+package com.principal.clitente.entity;
 
-import com.petShot.clitente.enums.SubscriptionStatus;
-import com.petShot.clitente.enums.TypeService;
+import com.principal.clitente.enums.SubscriptionStatus;
+import com.principal.clitente.enums.TypeService;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +16,7 @@ import java.util.UUID;
 @Entity
 @Data
 @Table(name = "subscription")
-public class EntityClienteSubscription {
+public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,11 @@ public class EntityClienteSubscription {
     @Enumerated(EnumType.STRING)
     private TypeService typeService;
 
-    private BigDecimal price;
+    @ManyToOne
+    @JoinColumn(name = "price_id")
+    private Price price;
+
+    private BigDecimal priceValue;
 
     @Enumerated(EnumType.STRING)
     private SubscriptionStatus status;

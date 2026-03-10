@@ -1,7 +1,7 @@
-package com.petShot.clitente.servicesCliente;
+package com.principal.clitente.servicesCliente;
 
-import com.petShot.clitente.DTO.ServiceSubscriptionEventDTO;
-import com.petShot.clitente.conf.RabbitConfig;
+import com.principal.clitente.DTO.ServiceSubscriptionEventDTO;
+import com.principal.clitente.conf.RabbitConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
