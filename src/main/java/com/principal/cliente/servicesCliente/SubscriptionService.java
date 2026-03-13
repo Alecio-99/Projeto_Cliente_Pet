@@ -38,7 +38,10 @@ public class SubscriptionService {
         this.producer = producer;
     }
 
-    public void subscribe(ServiceSubscriptionEventDTO dto){
+    public void subscribe(Long id, ServiceSubscriptionEventDTO dto){
+
+        Cliente entity = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
 
         Product product = productRepository.findById(dto.getProductId())
                 .orElseThrow(() -> new RuntimeException("Produto nao encontrado"));
@@ -46,13 +49,9 @@ public class SubscriptionService {
         Price price = priceRepository.findByProduct(product)
                 .orElseThrow(() -> new RuntimeException("Preco nao encontrado"));
 
-        Cliente entity = new Cliente();
-
-        entity.setTenantId(dto.getTenentId());
         entity.setPrice(price);
         entity.setPriceValue(price.getPrice());
         entity.setStatus(SubscriptionStatus.ACTIVE);
-        entity.setCreatedAt(LocalDateTime.now());
 
         repository.save(entity);
 
