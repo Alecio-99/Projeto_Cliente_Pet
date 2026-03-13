@@ -1,4 +1,4 @@
-package com.principal.clitente.enums;
+package com.principal.cliente.enums;
 
 public enum TypeService {
 

@@ -1,7 +1,7 @@
-package com.principal.clitente.repository;
+package com.principal.cliente.repository;
 
-import com.principal.clitente.entity.Price;
-import com.principal.clitente.entity.Product;
+import com.principal.cliente.entity.Price;
+import com.principal.cliente.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

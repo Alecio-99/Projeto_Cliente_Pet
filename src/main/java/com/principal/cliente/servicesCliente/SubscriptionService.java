@@ -1,14 +1,14 @@
-package com.principal.clitente.servicesCliente;
+package com.principal.cliente.servicesCliente;
 
-import com.fasterxml.jackson.annotation.JacksonAnnotationsInside;
-import com.principal.clitente.DTO.ServiceSubscriptionEventDTO;
-import com.principal.clitente.entity.Cliente;
-import com.principal.clitente.entity.Price;
-import com.principal.clitente.entity.Product;
-import com.principal.clitente.enums.SubscriptionStatus;
-import com.principal.clitente.repository.ClienteRepository;
-import com.principal.clitente.repository.PriceRepository;
-import com.principal.clitente.repository.ProductRepository;
+import com.principal.cliente.DTO.ClientDTO;
+import com.principal.cliente.DTO.ServiceSubscriptionEventDTO;
+import com.principal.cliente.entity.Cliente;
+import com.principal.cliente.entity.Price;
+import com.principal.cliente.entity.Product;
+import com.principal.cliente.enums.SubscriptionStatus;
+import com.principal.cliente.repository.ClienteRepository;
+import com.principal.cliente.repository.PriceRepository;
+import com.principal.cliente.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +22,9 @@ public class SubscriptionService {
     private ProductRepository productRepository;
     @Autowired
     private PriceRepository priceRepository;
+
+    @Autowired
+    private PrimeiroCadastroCliente primeiroCadastroCliente;
 
 
     private final ClienteRepository repository;
@@ -56,11 +59,16 @@ public class SubscriptionService {
         producer.sendSubscriptionEvent(
                 new ServiceSubscriptionEventDTO(
                         dto.getTenentId(),
-                        dto.getTenantName(),
+                        dto.getNomeEscritorio(),
                         dto.getProductId(),
-                        dto.getAdminEmail()
+                        dto.getEmail()
                 )
         );
+    }
+
+    public void primeiroCadastro(ClientDTO clientDTO){
+        primeiroCadastroCliente.primeiroCadastro(clientDTO);
+
     }
 
 }

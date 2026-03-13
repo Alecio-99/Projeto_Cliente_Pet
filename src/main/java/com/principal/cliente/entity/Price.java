@@ -1,4 +1,4 @@
-package com.principal.clitente.entity;
+package com.principal.cliente.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

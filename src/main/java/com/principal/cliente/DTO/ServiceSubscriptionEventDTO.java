@@ -1,7 +1,5 @@
-package com.principal.clitente.DTO;
+package com.principal.cliente.DTO;
 
-import com.principal.clitente.entity.Product;
-import com.principal.clitente.enums.TypeService;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -12,22 +10,22 @@ import java.util.UUID;
 public class ServiceSubscriptionEventDTO implements Serializable {
 
     private UUID tenentId;
-    private String tenantName;
+    private String nomeEscritorio;
     private Long productId;
-    private String adminEmail;
+    private String email;
 
 
     public ServiceSubscriptionEventDTO(){}
 
     public ServiceSubscriptionEventDTO(
             UUID tenentId,
-            String tenantName,
+            String nomeEscritorio,
             Long productId,
-            String adminEmail
+            String email
     ){
         this.tenentId = tenentId;
-        this.tenantName = tenantName;
+        this.nomeEscritorio = nomeEscritorio;
         this.productId = productId;
-        this.adminEmail = adminEmail;
+        this.email = email;
     }
 }

@@ -1,4 +1,4 @@
-package com.principal.clitente.conf;
+package com.principal.cliente.conf;
 
 
 import org.springframework.amqp.core.TopicExchange;

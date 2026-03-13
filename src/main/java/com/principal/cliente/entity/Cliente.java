@@ -1,7 +1,6 @@
-package com.principal.clitente.entity;
+package com.principal.cliente.entity;
 
-import com.principal.clitente.enums.SubscriptionStatus;
-import com.principal.clitente.enums.TypeService;
+import com.principal.cliente.enums.SubscriptionStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,8 +22,20 @@ public class Cliente {
     private Long id;
     private UUID tenantId;
 
-    @Enumerated(EnumType.STRING)
-    private TypeService typeService;
+    private String name;
+
+    private String nomeEscritorio;
+
+    private String email;
+
+    private String password;
+
+    private String cnpj;
+
+    private String phone;
+
+    @Embedded
+    private Endereco endereco;
 
     @ManyToOne
     @JoinColumn(name = "price_id")
@@ -33,6 +44,7 @@ public class Cliente {
     private BigDecimal priceValue;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "status")
     private SubscriptionStatus status;
 
     private LocalDateTime createdAt;

@@ -1,7 +1,7 @@
-package com.principal.clitente.servicesCliente;
+package com.principal.cliente.servicesCliente;
 
-import com.principal.clitente.DTO.ServiceSubscriptionEventDTO;
-import com.principal.clitente.conf.RabbitConfig;
+import com.principal.cliente.DTO.ServiceSubscriptionEventDTO;
+import com.principal.cliente.conf.RabbitConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;

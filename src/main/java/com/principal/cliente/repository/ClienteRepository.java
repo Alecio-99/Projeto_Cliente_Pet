@@ -1,6 +1,6 @@
-package com.principal.clitente.repository;
+package com.principal.cliente.repository;
 
-import com.principal.clitente.entity.Cliente;
+import com.principal.cliente.entity.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
